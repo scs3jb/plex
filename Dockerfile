@@ -1,5 +1,6 @@
 FROM phusion/baseimage:0.9.19
-MAINTAINER needo <needo@superhero.org>
+MAINTAINER scs3jb <scs3jb@local>
+#Based on the work of Needo <needo@superhero.org>
 #Based on the work of Eric Schultz <eric@startuperic.com>
 #Thanks to Tim Haak <tim@haak.co.uk>
 ENV DEBIAN_FRONTEND noninteractive
@@ -20,7 +21,7 @@ ADD installplex.sh /
 RUN bash /installplex.sh
 
 # Fix a Debianism of plex's uid being 101
-RUN usermod -u 999 plex
+RUN usermod -u 99 plex
 RUN usermod -g 100 plex
 
 VOLUME /config
